@@ -2,7 +2,7 @@
 	$sql = "SELECT * FROM users";
 	$result = mysqli_query($websitetest_db, $sql);
 	if(!$result){
-		die('SQL Error: ' . mysqli_error($result));
+		die('SQL Error: ' . mysqli_error($websitetest_db));
 	}
 
 	while($row = mysqli_fetch_assoc($result)){ 
