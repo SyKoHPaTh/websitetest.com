@@ -23,8 +23,8 @@
 		$insert_values = "";
 		foreach($dataArray as $fields=>$values){
 			$insert_fields .= $fields;
-			$insert_values .= $values;
-			if($fields != end($dataArray)){
+			$insert_values .= "'" . $values . "'";
+			if($values != end($dataArray)){
 				$insert_fields .= ", ";
 				$insert_values .= ", ";
 			}
