@@ -19,16 +19,8 @@
 	}
 
 	function add_user($db_conn, $dataArray){
-		$insert_fields = "";
-		$insert_values = "";
-		foreach($dataArray as $fields=>$values){
-			$insert_fields .= $fields;
-			$insert_values .= "'" . $values . "'";
-			if($fields != end(array_keys($dataArray))){
-				$insert_fields .= ", ";
-				$insert_values .= ", ";
-			}
-		}
+		$insert_fields = implode(",", array_keys($dataArray));
+		$insert_values = "'" . implode("', '", $dataArray) . "'";
 		$sql = "INSERT INTO users (" . $insert_fields . ") VALUES (" . $insert_values . ")";
 		$result = mysqli_query($db_conn, $sql);
 		if(!$result){
