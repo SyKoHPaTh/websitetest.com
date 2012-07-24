@@ -24,7 +24,7 @@
 		foreach($dataArray as $fields=>$values){
 			$insert_fields .= $fields;
 			$insert_values .= "'" . $values . "'";
-			if($fields != key(end($dataArray))){
+			if($fields != end(array_keys($dataArray))){
 				$insert_fields .= ", ";
 				$insert_values .= ", ";
 			}
