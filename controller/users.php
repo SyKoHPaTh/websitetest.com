@@ -31,14 +31,14 @@
 			$allUsers = get_all_users();
 
 			//show all users
-			require "../view/user_display.php"
+			require "../view/user_display.php";
 		} else {
 			//errors found, show form again
-			require "../view/user_form.php"
+			require "../view/user_form.php";
 		}
 	} else {
 			//show the user registration form
-		require "../view/user_form.php"
+		require "../view/user_form.php";
 	}
 
 ?>
