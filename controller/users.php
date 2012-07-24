@@ -13,15 +13,21 @@
 			"created" => time(),
 			"modified" => time()
 			);
-		//secure/encrypt the password
-		$salt = "pepper";
-		$form['password'] = md5($salt + $form['password']);
 
 		//validate our values
 		$errors = "";
 		if($form['password'] != $_POST['password_confirm']){
-			$errors = "Passwords do not match!";
+			$errors .= "Passwords do not match!<br>";
 		}
+
+		if($form['email_address'] != $_POST['emailaddr']){
+			$errors .= "Email Address contains invalid characters!<br>";
+		}
+
+		//secure/encrypt the password
+		$salt = "pepper";
+		$form['password'] = md5($salt + $form['password']);
+
 
 		if($errors == ""){
 			//add user to the database
