@@ -6,12 +6,12 @@
 	if(isset($_POST['submit'])){
 		//setup array to match table fields=>form values
 		$form = array(
-			"username" => filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-			"password" => filter_var($_POST['password'], FILTER_SANITIZE_STRING);
-			"email_address" => filter_var($_POST['emailaddr'], FILTER_SANITIZE_STRING);
-			"name" => filter_var($_POST['name'], FILTER_SANITIZE_STRING);
-			"created" => time();
-			"modified" => time();
+			"username" => filter_var($_POST['username'], FILTER_SANITIZE_STRING),
+			"password" => filter_var($_POST['password'], FILTER_SANITIZE_STRING),
+			"email_address" => filter_var($_POST['emailaddr'], FILTER_SANITIZE_STRING),
+			"name" => filter_var($_POST['name'], FILTER_SANITIZE_STRING),
+			"created" => time(),
+			"modified" => time()
 			);
 		//secure/encrypt the password
 		$salt = "pepper";
