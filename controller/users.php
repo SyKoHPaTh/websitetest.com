@@ -1,5 +1,4 @@
 <?php
-
 	require "model/user_model.php";
 
 
@@ -26,7 +25,7 @@
 
 		//secure/encrypt the password
 		$salt = "pepper";
-		$form['password'] = md5($salt + $form['password']);
+		$form['password'] = md5($salt + md5($form['password']));
 
 
 		if($errors == ""){
