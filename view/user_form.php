@@ -22,6 +22,14 @@
 		</tr>
 		<tr>
 			<td>
+				Password Confirm
+			</td>
+			<td>
+				<input type="password" name="password_confirm">
+			</td>
+		</tr>
+		<tr>
+			<td>
 				Email Address
 			</td>
 			<td>
