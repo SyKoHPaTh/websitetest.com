@@ -30,7 +30,6 @@
 			}
 		}
 		$sql = "INSERT INTO users (" . $insert_fields . ") VALUES (" . $insert_values . ")";
-		echo $sql;
 		$result = mysqli_query($db_conn, $sql);
 		if(!$result){
 			die('SQL Error: ' . mysqli_error($db_conn));
