@@ -18,4 +18,20 @@
 		return $userList;
 	}
 
+	function add_user($dataArray){
+		$insert_fields = "";
+		$insert_values = "";
+		foreach($dataArray as $fields=>$values){
+			$insert_fields .= $fields;
+			$insert_values .= $values;
+			if($fields != end($dataArray)){
+				$insert_fields .= ", ";
+				$insert_values .= ", ";
+			}
+		}
+		$sql = "INSERT INTO users (" . $insert_fields . ") VALUES (" . $insert_values . ")";
+
+		echo $sql, "<br>", $fields, "<br>", $values, "<br>";
+	}
+
 ?>
