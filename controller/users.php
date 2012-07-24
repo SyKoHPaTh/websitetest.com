@@ -31,7 +31,7 @@
 
 		if($errors == ""){
 			//add user to the database
-			add_user($_POST);
+			add_user($websitetest_db, $form);
 
 			//get all users from database
 			$allUsers = get_all_users($websitetest_db);

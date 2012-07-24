@@ -18,7 +18,7 @@
 		return $userList;
 	}
 
-	function add_user($dataArray){
+	function add_user($db_conn, $dataArray){
 		$insert_fields = "";
 		$insert_values = "";
 		foreach($dataArray as $fields=>$values){
