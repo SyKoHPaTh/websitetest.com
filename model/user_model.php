@@ -1,10 +1,10 @@
 <?php
 
-	function get_all_users(){
+	function get_all_users($db_conn){
 	 	$sql = "SELECT * FROM users";
-		$result = mysqli_query($websitetest_db, $sql);
+		$result = mysqli_query($db_conn, $sql);
 		if(!$result){
-			die('SQL Error: ' . mysqli_error($websitetest_db));
+			die('SQL Error: ' . mysqli_error($db_conn));
 		}
 
 		$userList = array();

@@ -34,7 +34,7 @@
 			add_user($_POST);
 
 			//get all users from database
-			$allUsers = get_all_users();
+			$allUsers = get_all_users($websitetest_db);
 
 			//show all users
 			require "view/user_display.php";
