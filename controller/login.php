@@ -3,8 +3,7 @@
 
 	//check if logged in!
 	if($_SESSION['logged_in'] == "YES"){
-		echo "Welcome Back, " . $_SESSION['name'] . "!<br>";
-		require "view/user_display.php";
+		require "view/index.php";
 		exit;
 	}
 
@@ -32,7 +31,8 @@
 			$_SESSION['name'] = $errors['name'];
 
 			//show all users
-			require "view/user_display.php";
+			require "view/index.php";
+			exit;
 
 		} else {
 			//user not found, or incorrect password!
