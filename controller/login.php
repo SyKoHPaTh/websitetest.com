@@ -32,7 +32,7 @@
 			$_SESSION['name'] = $errors['name'];
 
 			//redirect to index page
-			redirect("index.php");
+			redirect("");
 
 		} else {
 			//user not found, or incorrect password!
