@@ -26,6 +26,7 @@
 		$errors = validate_user($websitetest_db, $form);
 
 		if(is_array($errors)){
+			print_r($errors);
 			//if so, cram that user into session
 			$_SESSION['logged_in'] = "YES";
 			$_SESSION['username'] = $errors['username'];
