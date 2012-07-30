@@ -25,7 +25,7 @@
 		//check if user and password matches
 		$errors = validate_user($websitetest_db, $form);
 
-		if(isset($errors['id'])){
+		if(is_array($errors)){
 			//if so, cram that user into session
 			$_SESSION['logged_in'] = "YES";
 			$_SESSION['username'] = $errors['username'];
