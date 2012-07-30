@@ -11,5 +11,9 @@
 
 	print_r($urlParse);
 
+	$urlParts = explode('/', $urlParse);
+
+	print_r($urlParts);
+
 	//require "controller/index.php"; //pass to controller
 ?>
