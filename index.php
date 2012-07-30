@@ -17,7 +17,5 @@
 		$controller = "controller/index.php";
 	}
 
-	echo "I'm gonna pass control to: ", $controller;
-
-	//require "controller/index.php"; //pass to controller
+	require $controller; //pass to controller
 ?>
