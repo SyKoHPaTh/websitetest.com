@@ -26,15 +26,13 @@
 		$errors = validate_user($websitetest_db, $form);
 
 		if(is_array($errors)){
-			print_r($errors);
 			//if so, cram that user into session
 			$_SESSION['logged_in'] = "YES";
 			$_SESSION['username'] = $errors['username'];
 			$_SESSION['name'] = $errors['name'];
 
-			//redirect to index page
-			$redirect = "http://" . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-			header($redirect);
+			//show all users
+			require "view/user_display.php";
 
 		} else {
 			//user not found, or incorrect password!
