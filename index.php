@@ -7,6 +7,11 @@
 
 	$urlParts = explode('/', $urlParse['path']);
 
+	if($urlParts[3] == $urlParts[2]){
+		//prevent index.php/index.php/controller
+		array_splice($urlParts, 2, 1);
+	}
+
 	if(isset($urlParts[3])){
 		//check if file exists
 		$controller = "controller/" . $urlParts[3] . ".php";
