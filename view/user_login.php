@@ -3,7 +3,7 @@
 	<title>User Login Form</title>
 </head>
 <body>
-	<form name="user_login" action="index.php/login" method="post">
+	<form name="user_login" action="login" method="post">
 		<table>
 			<tr>
 				<td>
