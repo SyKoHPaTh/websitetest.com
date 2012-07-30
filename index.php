@@ -11,7 +11,7 @@
 
 	print_r($urlParse);
 
-	$urlParts = explode('/', $urlParse);
+	$urlParts = explode('/', $urlParse['path']);
 
 	print_r($urlParts);
 
