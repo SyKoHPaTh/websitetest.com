@@ -29,6 +29,13 @@
 					<b style="color:red"><?php echo $errors; ?></b>
 				</td>
 			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<input type="submit" name="submit" value="Submit Form">
+				</td>
+			</tr>
 		</table>
 	</form>
 </body>
