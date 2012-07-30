@@ -32,7 +32,8 @@
 			$_SESSION['name'] = $errors['name'];
 
 			//redirect to index page
-			redirect("");
+			$redirect = "http://" . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+			header($redirect);
 
 		} else {
 			//user not found, or incorrect password!
