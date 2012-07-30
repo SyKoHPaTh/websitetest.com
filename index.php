@@ -7,10 +7,16 @@
 
 	$urlParts = explode('/', $urlParse['path']);
 
+	echo "<br>Before:<br>";
+	print_r($urlParts);
+
 	if($urlParts[3] == $urlParts[2]){
 		//prevent index.php/index.php/controller
 		array_splice($urlParts, 2, 1);
 	}
+
+	echo "<br>After:<br>";
+	print_r($urlParts);
 
 	if(isset($urlParts[3])){
 		//check if file exists
