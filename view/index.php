@@ -11,7 +11,7 @@
 	<?php else: ?>
 		<a href="<?php echo $prefix; ?>login">Login</a><br>
 	<?php endif; ?>
-	<a href="register">Register</a><br>
+	<a href="<?php echo $prefix; ?>register">Register</a><br>
 	<?php print_r($_SESSION); ?>
 </body>
 </html>
