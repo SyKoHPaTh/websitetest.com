@@ -5,5 +5,11 @@
 		//OR
 	//require __DIR__ . "/includes/db_connect.php";
 
-	require "controller/users.php"; //pass to controller
+	$url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+	$urlParse = parse_url($url);
+
+	print_r($urlParse);
+
+	//require "controller/index.php"; //pass to controller
 ?>
