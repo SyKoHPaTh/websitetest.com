@@ -33,9 +33,6 @@
 			//show all users
 			require "view/index.php";
 			exit;
-
-		} else {
-			//user not found, or incorrect password!
 		}
 	}
 	require "view/user_login.php";

@@ -1,7 +1,7 @@
 <?php
 
 	function validate_user($db_conn, $dataArray){
-	 	$sql = "SELECT * FROM users WHERE username='" . $dataArray['username'] . "'";
+		$sql = "SELECT * FROM users WHERE username='" . $dataArray['username'] . "'";
 		$result = mysqli_query($db_conn, $sql);
 		if(!$result){
 			die('SQL Error: ' . mysqli_error($db_conn));
