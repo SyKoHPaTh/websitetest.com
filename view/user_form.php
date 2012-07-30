@@ -3,7 +3,7 @@
 	<title>User Registration Form</title>
 </head>
 <body>
-	<form name="user_registration" action="index.php" method="post">
+	<form name="user_registration" action="index.php/register" method="post">
 		<table>
 			<tr>
 				<td>

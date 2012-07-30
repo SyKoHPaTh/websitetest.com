@@ -1,6 +1,13 @@
 <?php
 	require "model/user_model.php";
 
+	//check if logged in!
+	if($_SESSION['logged_in'] == "YES"){
+		echo "Welcome Back, " . $_SESSION['name'] . "!<br>";
+		require "view/user_display.php";
+		exit;
+	}
+
 
 	//login user
 		if(isset($_POST['submit'])){
@@ -16,8 +23,13 @@
 
 
 			//check if user and password matches
-			if(validate_user($websitetest_db, $form)){
+			$errors = validate_user($websitetest_db, $form);
+
+			if(isset($errors['id'])){
 				//if so, cram that user into session
+				$_SESSION['logged_in'] = "YES";
+				$_SESSION['username'] = $errors['username'];
+				$_SESSION['name'] = $errors['name'];
 
 			} else {
 				//user not found, or incorrect password!
