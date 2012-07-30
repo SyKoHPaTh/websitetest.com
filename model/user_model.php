@@ -12,6 +12,10 @@
 			if($row['password']==$dataArray['password']){
 				return $row; //pass user account back
 			} else {
+				print_r($row);
+				echo "<br>";
+				print_r($dataArray);
+
 				return "Incorrect Password";
 			}
 		} else {
