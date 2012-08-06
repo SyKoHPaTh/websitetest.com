@@ -1,9 +1,6 @@
 <?php
 	require "model/user_model.php";
 
-	//get user profile information
-	$form = get_user($websitetest_db, $_SESSION['username']);
-
 	//Edit user profile
 		if(isset($_POST['submit'])){
 			//setup array to match table fields=>form values
@@ -27,8 +24,7 @@
 			//secure/encrypt the password
 			$salt = "pepper";
 			$oldPassword = md5($salt + md5($form['oldpassword']));
-print_r($form);
-			if(!check_password($websitetest_db, $form['username'], $oldPassword)){
+			if(!check_password($websitetest_db, $_SESSION['username'], $oldPassword)){
 				$errors .= "Old password is not correct!<br>";
 			}
 
@@ -43,6 +39,8 @@ print_r($form);
 		}
 			//show the user registration form, if it's set
 		if($form){
+			//reload user profile information
+			$form = get_user($websitetest_db, $_SESSION['username']);
 			require "view/user_profile.php";
 		} else { 
 			//tried to access user that didn't exist ($form = FALSE)
