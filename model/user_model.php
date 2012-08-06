@@ -51,7 +51,7 @@
 		}
 	}
 
-	function update_user($db_conn, $dataArray){
+	function update_user($db_conn, $username, $dataArray){
 		$fields = "";
 		$lastKey = key(array_slice($dataArray, -1, 1, TRUE)); //get last key of array
 		foreach($dataArray as $key=>$value){
@@ -61,7 +61,8 @@
 				$fields .= ",";
 			}
 		}
-		$sql = "UPDATE users SET " . $fields;
+		$sql = "UPDATE users SET " . $fields . " WHERE username='" . $username ."'";
+die($sql);
 		$result = mysqli_query($db_conn, $sql);
 		if(!$result){
 			die('SQL Error: ' . mysqli_error($db_conn));
