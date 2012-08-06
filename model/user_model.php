@@ -94,10 +94,6 @@
 		}
 		if(mysqli_num_rows($result) > 0){
 			$row = mysqli_fetch_assoc($result);
-echo $username, "<br>";
-echo $password, "<br>";
-print_r($row);
-exit;
 			if($row['password']==$password){
 				return TRUE;
 			} else {
