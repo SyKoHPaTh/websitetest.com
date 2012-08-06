@@ -76,7 +76,6 @@
 		if(!$result){
 			die('SQL Error: ' . mysqli_error($db_conn));
 		}
-die($sql);
 		if(mysqli_num_rows($result) > 0){
 			$row = mysqli_fetch_assoc($result);
 		} else {
