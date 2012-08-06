@@ -37,14 +37,9 @@
 				require "view/index.php";
 			}
 		}
-			//show the user registration form, if it's set
-		if($form){
-			//reload user profile information
-			$form = get_user($websitetest_db, $_SESSION['username']);
-			require "view/user_profile.php";
-		} else { 
-			//tried to access user that didn't exist ($form = FALSE)
-			require "view/index.php";
-		}
+
+		//reload user profile information
+		$form = get_user($websitetest_db, $_SESSION['username']);
+		require "view/user_profile.php";
 
 ?>
