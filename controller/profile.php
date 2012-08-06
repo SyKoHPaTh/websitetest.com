@@ -39,13 +39,14 @@
 
 				//show index page upon completion
 				require "view/index.php";
-			} else {
-				//errors found, show form again
-				require "view/profile.php";
 			}
-		} else {
-				//show the user registration form
+		}
+			//show the user registration form, if it's set
+		if($form){
 			require "view/user_profile.php";
+		} else { 
+			//tried to access user that didn't exist ($form = FALSE)
+			require "view/index.php";
 		}
 
 ?>
