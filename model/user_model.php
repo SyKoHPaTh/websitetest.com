@@ -98,11 +98,9 @@
 				return TRUE;
 			} else {
 				echo $row['password'], "<br>", $password;
-exit;
 				return FALSE;
 			}
 		}
-die($sql);
 		return FALSE; //no rows found?
 	}
 
