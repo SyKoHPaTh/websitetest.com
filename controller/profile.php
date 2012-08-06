@@ -28,7 +28,7 @@
 			$salt = "pepper";
 			$oldPassword = md5($salt + md5($form['oldpassword']));
 
-			if(!check_password($oldPassword)){
+			if(!check_password($websitetest_db, $form['username'], $oldPassword)){
 				$errors .= "Old password is not correct!<br>";
 			}
 

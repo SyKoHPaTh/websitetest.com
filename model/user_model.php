@@ -85,7 +85,7 @@
 		return $row;
 	}
 
-	function check_password($username, $password){
+	function check_password($db_conn, $username, $password){
 		//returns TRUE if password matches, otherwise FALSE
 		$sql = "SELECT * FROM users WHERE username='" . $username . "'";
 		$result = mysqli_query($db_conn, $sql);
