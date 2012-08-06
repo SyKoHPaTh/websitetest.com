@@ -51,4 +51,21 @@
 		}
 	}
 
+	function update_user($db_conn, $dataArray){
+		$fields = "";
+		$lastKey = key(array_slice($dataArray, -1, 1, TRUE)); //get last key of array
+		foreach($dataArray as $key=>$value){
+			$fields .= " $key='$value'";
+				//append a comma for proper SQL statement
+			if($key != $lastKey){
+				$fields .= ",";
+			}
+		}
+		$sql = "UPDATE users SET " . $fields;
+		$result = mysqli_query($db_conn, $sql);
+		if(!$result){
+			die('SQL Error: ' . mysqli_error($db_conn));
+		}
+	}
+
 ?>
