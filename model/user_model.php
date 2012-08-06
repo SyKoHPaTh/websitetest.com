@@ -68,4 +68,40 @@
 		}
 	}
 
+	function get_user($db_conn, $username){
+		$username = filter_var($username, FILTER_SANITIZE_STRING);
+
+	 	$sql = "SELECT * FROM users WHERE username = '" . $username . "'";
+		$result = mysqli_query($db_conn, $sql);
+		if(!$result){
+			die('SQL Error: ' . mysqli_error($db_conn));
+		}
+
+		if(mysqli_num_rows($result) > 0){
+			$row = mysqli_fetch_assoc($result);
+		} else {
+			return FALSE;
+		}
+
+		return $row;
+	}
+
+	function check_password($username, $password){
+		//returns TRUE if password matches, otherwise FALSE
+		$sql = "SELECT * FROM users WHERE username='" . $username . "'";
+		$result = mysqli_query($db_conn, $sql);
+		if(!$result){
+			die('SQL Error: ' . mysqli_error($db_conn));
+		}
+		if(mysqli_num_rows($result) > 0){
+			$row = mysqli_fetch_assoc($result);
+			if($row['password']==$password){
+				return TRUE;
+			} else {
+				return FALSE;
+			}
+		}
+		return FALSE; //no rows found?
+	}
+
 ?>
