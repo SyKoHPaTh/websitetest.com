@@ -23,7 +23,7 @@
 
 			//secure/encrypt the password
 			$salt = "pepper";
-			$oldPassword = md5($salt + md5($form['oldpassword']));
+			$oldPassword = md5($salt + md5($_POST['oldpassword']));
 			if(!check_password($websitetest_db, $_SESSION['username'], $oldPassword)){
 				$errors .= "Old password is not correct!<br>";
 			}
