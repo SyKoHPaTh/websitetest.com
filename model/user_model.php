@@ -93,6 +93,10 @@
 			die('SQL Error: ' . mysqli_error($db_conn));
 		}
 		if(mysqli_num_rows($result) > 0){
+echo $username, "<br>";
+echo $password, "<br>";
+print_r($row);
+exit;
 			$row = mysqli_fetch_assoc($result);
 			if($row['password']==$password){
 				return TRUE;
