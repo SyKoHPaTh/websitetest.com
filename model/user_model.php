@@ -63,7 +63,6 @@
 			}
 		}
 		$sql = "UPDATE users SET " . $fields . " WHERE username='" . $username ."'";
-die($sql);
 		$result = mysqli_query($db_conn, $sql);
 		if(!$result){
 			die('SQL Error: ' . mysqli_error($db_conn));
