@@ -27,11 +27,12 @@
 			if(!check_password($websitetest_db, $_SESSION['username'], $oldPassword)){
 				$errors .= "Old password is not correct!<br>";
 			}
-
+				//encrypt for storage
+			$form['password'] = md5($salt + md5($form['password']));
 
 			if($errors == ""){
 				//update user in the database
-				update_user($websitetest_db, $username, $form);
+				update_user($websitetest_db, $_SESSION['username'], $form);
 
 				//show index page upon completion
 				require "view/index.php";

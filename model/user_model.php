@@ -52,6 +52,7 @@
 	}
 
 	function update_user($db_conn, $username, $dataArray){
+		$username = filter_var($username, FILTER_SANITIZE_STRING);
 		$fields = "";
 		$lastKey = key(array_slice($dataArray, -1, 1, TRUE)); //get last key of array
 		foreach($dataArray as $key=>$value){
@@ -87,6 +88,7 @@ die($sql);
 	}
 
 	function check_password($db_conn, $username, $password){
+		$username = filter_var($username, FILTER_SANITIZE_STRING);
 		//returns TRUE if password matches, otherwise FALSE
 		$sql = "SELECT * FROM users WHERE username='" . $username . "'";
 		$result = mysqli_query($db_conn, $sql);
