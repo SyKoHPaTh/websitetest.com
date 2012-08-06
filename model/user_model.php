@@ -102,6 +102,7 @@ exit;
 				return FALSE;
 			}
 		}
+die($sql);
 		return FALSE; //no rows found?
 	}
 

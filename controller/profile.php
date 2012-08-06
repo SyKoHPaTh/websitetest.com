@@ -3,6 +3,7 @@
 
 	//get user profile information
 	$form = get_user($websitetest_db, $_SESSION['username']);
+print_r($form);
 
 	//Edit user profile
 		if(isset($_POST['submit'])){
@@ -27,7 +28,7 @@
 			//secure/encrypt the password
 			$salt = "pepper";
 			$oldPassword = md5($salt + md5($form['oldpassword']));
-
+print_r($_SESSION);
 			if(!check_password($websitetest_db, $form['username'], $oldPassword)){
 				$errors .= "Old password is not correct!<br>";
 			}
