@@ -97,6 +97,8 @@
 			if($row['password']==$password){
 				return TRUE;
 			} else {
+				echo $row['password'], "<br>", $password;
+exit;
 				return FALSE;
 			}
 		}
